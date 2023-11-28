@@ -120,6 +120,12 @@ defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 #sudo rm -rf /System/Library/CoreServices/DefaultDesktop.jpg
 #sudo ln -s /path/to/your/image /System/Library/CoreServices/DefaultDesktop.jpg
 
+# Show Bluetooth in menu bar (see https://apple.stackexchange.com/a/458579 )
+defaults write ~/Library/Preferences/ByHost/com.apple.controlcenter.plist "Bluetooth" -int "18"
+
+# Show Sound/Volume in menu bar (see https://apple.stackexchange.com/a/458579 )
+defaults write ~/Library/Preferences/ByHost/com.apple.controlcenter.plist "Sound" -int "18"
+
 ###############################################################################
 # Trackpad, mouse, keyboard, Bluetooth accessories, and input                 #
 ###############################################################################
