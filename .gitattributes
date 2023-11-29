@@ -1,3 +1,7 @@
 # Automatically normalize line endings for all text-based files
 #* text=auto
 # Disabled because of https://github.com/mathiasbynens/dotfiles/issues/149 :(
+
+# Unset diff attribute as lock files are opaque to a human reader
+# This will cause Git to generate `Binary files differ` instead of a regular diff
+package-lock.json -diff

@@ -1,7 +1,21 @@
+[user]
+	name = Polar stoat
+	email = polarstoat@users.noreply.github.com
+
+[credential]
+	helper = osxkeychain
+
+# https://jordanelver.co.uk/blog/2020/06/04/fixing-commits-with-git-commit-fixup-and-git-rebase-autosquash/
+[rebase]
+  autosquash = true
+
 [alias]
 
 	# View abbreviated SHA, description, and history graph of the latest 20 commits.
 	l = log --pretty=oneline -n 20 --graph --abbrev-commit
+
+	# View abbreviated SHA, description, and history graph of all commits.
+	la = log --pretty=oneline --graph --abbrev-commit --all
 
 	# View the current working tree status using the short format.
 	s = status -s
@@ -66,6 +80,14 @@
 	# Show the user email for the current repository.
 	whoami = config user.email
 
+	last = log -1 HEAD
+	unstage = reset HEAD --
+	diff-staged = diff --cached
+	diff-all = diff HEAD
+	empty-commit = commit --allow-empty -m \"Initial empty commit\"
+	undo-commit = reset HEAD~
+	reword = commit --amend
+
 [apply]
 
 	# Detect whitespace errors when applying a patch.
@@ -124,11 +146,6 @@
 	changed = green
 	untracked = cyan
 
-[commit]
-
-	# https://help.github.com/articles/signing-commits-using-gpg/
-	gpgsign = true
-
 [diff]
 
 	# Detect copies as well as renames.
@@ -155,28 +172,6 @@
 	default = simple
 	# Make `git push` push relevant annotated tags when pushing branches out.
 	followTags = true
-
-# URL shorthands
-
-[url "git@github.com:"]
-
-	insteadOf = "gh:"
-	pushInsteadOf = "github:"
-	pushInsteadOf = "git://github.com/"
-
-[url "git://github.com/"]
-
-	insteadOf = "github:"
-
-[url "git@gist.github.com:"]
-
-	insteadOf = "gst:"
-	pushInsteadOf = "gist:"
-	pushInsteadOf = "git://gist.github.com/"
-
-[url "git://gist.github.com/"]
-
-	insteadOf = "gist:"
 
 [init]
 
