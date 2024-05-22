@@ -121,6 +121,9 @@
 	# https://git-scm.com/docs/git-update-index#_untracked_cache
 	untrackedCache = true
 
+	# From https://github.com/so-fancy/diff-so-fancy?tab=readme-ov-file#with-git
+	pager = diff-so-fancy | less --tabs=4 -RF
+
 [color]
 
 	# Use colors in Git commands that are capable of colored output when
@@ -176,3 +179,8 @@
 [init]
 
 	defaultBranch = main
+
+[interactive]
+
+	# From https://github.com/so-fancy/diff-so-fancy?tab=readme-ov-file#with-git
+	diffFilter = diff-so-fancy --patch
