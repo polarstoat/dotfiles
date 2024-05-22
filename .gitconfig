@@ -124,12 +124,6 @@
 	# From https://github.com/so-fancy/diff-so-fancy?tab=readme-ov-file#with-git
 	pager = diff-so-fancy | less --tabs=4 -RF
 
-[color]
-
-	# Use colors in Git commands that are capable of colored output when
-	# outputting to the terminal. (This is the default setting in Git ≥ 1.8.4.)
-	ui = auto
-
 [color "branch"]
 
 	current = yellow reverse
@@ -138,10 +132,23 @@
 
 [color "diff"]
 
-	meta = yellow bold
-	frag = magenta bold # line info
-	old = red # deletions
-	new = green # additions
+	# From https://github.com/so-fancy/diff-so-fancy?tab=readme-ov-file#improved-colors-for-the-highlighted-bits
+	meta = 11
+	frag = magenta bold
+	old = red bold
+	new = green bold
+	func = 146 bold
+	commit = yellow bold
+	whitespace = red reverse
+
+[color "diff-highlight"]
+
+	# From https://github.com/so-fancy/diff-so-fancy?tab=readme-ov-file#improved-colors-for-the-highlighted-bits
+	oldNormal = red bold
+	oldHighlight = red bold 52
+	newNormal = green bold
+	newHighlight = green bold 22
+
 
 [color "status"]
 
